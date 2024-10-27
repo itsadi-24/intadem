@@ -29,6 +29,7 @@ Clicking on any pin from the sidebar should navigate the map to the location of 
 
 Local Storage:
 Local storage should be used to persist the pins, remarks, and fetched addresses across sessions.
+
 Success Criteria:
 Users can comfortably navigate and interact with the map interface.
 Pins can be dropped easily, and remarks can be entered via the popup.
