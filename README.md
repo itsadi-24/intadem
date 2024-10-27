@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+Problem Statement: Pin Drop with Remarks Functionality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Objective:
+Develop a user-friendly tool that allows users to drop pins on a map, enter remarks, and automatically fetch the address for the pin location. The saved pins should be viewable in a list format.
+Functionality:
+Map Interface:
+The tool should provide a clear and interactive map interface where users can visualize the locations.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pin Drop:
+Users should be able to click anywhere on the map to drop a pin. A popup should appear immediately after dropping the pin, allowing users to enter optional remarks.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Address Fetching (Not Mandatory but bonus Points would be awarded):
+After dropping the pin, the tool should use the pin's latitude and longitude to automatically fetch the corresponding address using an open API (e.g., OpenStreetMap's Nominatim API).
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Pin Submission:
+Upon submitting the popup form, the pin, along with the entered remarks and fetched address, should be saved.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Saved Pins:
+All saved pins should be visible as a list in a sidebar. Each pin in the list should display the remark and fetched address.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+Pin Navigation:
+Clicking on any pin from the sidebar should navigate the map to the location of that pin and highlight it.
+
+
+Local Storage:
+Local storage should be used to persist the pins, remarks, and fetched addresses across sessions.
+
+Success Criteria:
+Users can comfortably navigate and interact with the map interface.
+Pins can be dropped easily, and remarks can be entered via the popup.
+The tool automatically fetches the address based on the pin's latitude/longitude using an open API (Not Mandatory but bonus Points would be awarded).
+All saved pins are visible in the sidebar with corresponding remarks and addresses.
+Clicking on a saved pin brings the user back to the exact pin location on the map.
+Local storage effectively retains all pin data (including the address) between sessions.
