@@ -15,13 +15,13 @@ import { PinDialog } from './PinDialog';
 import { Loader2, MapPin } from 'lucide-react';
 import { Trash2 } from 'lucide-react'; // Add this import
 import { Button } from '@/components/ui/button';
+import L from 'leaflet';
 interface Pin {
   id: number;
   position: [number, number];
   remark: string;
   address: string;
 }
-
 function MapEvents({
   onMapClick,
 }: {

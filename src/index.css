@@ -89,3 +89,17 @@
 [data-radix-popper-content-wrapper] {
   z-index: 1100 !important;
 }
+
+/* In your global CSS file */
+.leaflet-popup-content-wrapper {
+  min-width: 200px;
+}
+
+.pin-card:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
